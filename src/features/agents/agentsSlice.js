@@ -10,12 +10,16 @@ const initialState = {
     { id: 5, agentName: "סוכן טכנולוגיה", agentLocn: "tech.jpg", agentURL: "https://agents.autodidact.co.il/tech", category: "טכנולוגיה" }
   ],
 
+    userAgents: [
+    { id: 1, agentName: "סוכן אקסל", agentLocn: "excell.jpg", agentURL: "https://agents.autodidact.co.il/excell", category: "משרד" },
+  ],
+
   loading: false,
   error: null,
 
   // 👉 הוספתי את זה:
   currentAgent: null,
-  userName: "נסיון",
+  currentUser: "נסיון",
 };
 
 const agentsSlice = createSlice({
@@ -26,6 +30,9 @@ const agentsSlice = createSlice({
       state.agents.push(action.payload);
     },
 
+    addAgentIntoUserAgents: (state, action) => {
+      state.userAgents.push(action.payload);
+    },
     updateAgent: (state, action) => {
       const index = state.agents.findIndex(agent => agent.id === action.payload.id);
       if (index !== -1) {
@@ -55,7 +62,7 @@ const agentsSlice = createSlice({
     },
 
     changeCurrentUserName:(state, action) => {
-      state.userName = action.payload;
+      state.currentUser = action.payload;
     }
   },
 });

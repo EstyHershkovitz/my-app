@@ -8,7 +8,7 @@ export const AgentManagement = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const agents = useSelector(state => state.agents.agents);
-
+    const userName=useSelector(state=>state.agents.currentUser)
     // ------- 1) ייבוא סוכנים מקובץ אקסל -------
     const handleFileUpload = (e) => {
         const file = e.target.files[0];
@@ -54,7 +54,9 @@ export const AgentManagement = () => {
     return (
         <>
             <h1>ניהול סוכנים</h1>
-
+            <div>
+                <h2>{userName}</h2>
+            </div>
             <div>
                 {agents.map(a => <AgentCard key={a.id} p={a} />)}
             </div>
