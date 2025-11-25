@@ -8,9 +8,10 @@ export const AgentDelete=()=>{
     const dispatch=useDispatch()
     const currentAgent=useSelector(state=>state.agents.currentAgent)//הסוכן הנוכחי
 
-    const goToList=()=>{
+    const deleteA=()=>{
 
-        dispatch(deleteAgent(currentAgent))
+        dispatch(deleteAgent(currentAgent.id))
+        navigate("/AgentManagement")
     }
     return <div>
 
@@ -19,6 +20,6 @@ export const AgentDelete=()=>{
         <h3>להיעזר בסוכן האקסל.</h3>
         <h3>האם אתה בטוח??</h3>
         <button onClick={()=>{navigate("/management")}}>ביטול</button>
-        <button onClick={()=>{goToList()}}>אישור</button>
+        <button onClick={()=>{deleteA()}}>אישור</button>
     </div>
 }

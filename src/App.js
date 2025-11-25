@@ -5,6 +5,7 @@ import { AgentManagement } from './features/agents/AgentManagement';
 import { AddAgent } from './features/agents/AddAgent';
 import { AgentDelete } from './features/agents/AgentDelete';
 import { AgentDetails } from './features/agents/AgentDetails';
+import { UserName } from './features/agents/UserName';
 
 function App() {
   return (
@@ -27,11 +28,15 @@ function App() {
       <Link to="/add"> הוספת סוכן</Link>
       <Link to="/management">ניהול סוכנים</Link>
       <Routes>
-        <Route path='add' element={<AddAgent />} />
         <Route path='management' element={<AgentManagement />} />
+        <Route path='add' element={<AddAgent />} />
         {/* <Route path='card' element={<AgentManagement />} /> */}
         <Route path='delete' element={<AgentDelete />} />
         <Route path='details' element={<AgentDetails />} />
+        <Route path='userName' element={<UserName />} />
+
+        <Route path='*' element={<AgentManagement />} />
+
       </Routes>
     </div>
   );
