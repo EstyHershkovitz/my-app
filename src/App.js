@@ -1,8 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import { Link, Route, Routes } from 'react-router-dom';
-import { Xempol1 } from './componnt/Xempol1';
-import { Xempol2 } from './componnt/Xempol2';
+import { AgentManagement } from './features/agents/AgentManagement';
+import { AddAgent } from './features/agents/AddAgent';
+import { AgentDelete } from './features/agents/AgentDelete';
+import { AgentDetails } from './features/agents/AgentDetails';
 
 function App() {
   return (
@@ -22,11 +24,14 @@ function App() {
         </a>
       </header> */}
 
-      <Link to="ex1">דוגמא אחת</Link>
-      <Link to="ex2">דוגמא 2</Link>
+      <Link to="/add"> הוספת סוכן</Link>
+      <Link to="/management">ניהול סוכנים</Link>
       <Routes>
-        <Route path='ex1' element={<Xempol1 />} />
-        <Route path='ex2' element={<Xempol2 />} />
+        <Route path='add' element={<AddAgent />} />
+        <Route path='management' element={<AgentManagement />} />
+        {/* <Route path='card' element={<AgentManagement />} /> */}
+        <Route path='delete' element={<AgentDelete />} />
+        <Route path='details' element={<AgentDetails />} />
       </Routes>
     </div>
   );
