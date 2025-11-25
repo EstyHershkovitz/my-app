@@ -19,7 +19,7 @@ const initialState = {
 
   // 👉 הוספתי את זה:
   currentAgent: null,
-  currentUser: "נסיון",
+  currentUser: null,
 };
 
 const agentsSlice = createSlice({
@@ -76,6 +76,8 @@ export const {
   setError,
   setCurrentAgent,   // ← אל תשכחי את זה!
   changeCurrentUserName,
+  addAgentIntoUserAgents,
+  
 } = agentsSlice.actions;
 
 export const selectAgents = state => state.agents.agents;

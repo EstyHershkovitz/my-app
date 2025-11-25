@@ -4,7 +4,7 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, CartesianGrid } from "rec
 export const AgentDetails = ({ a }) => {
 
     const currentAgent = useSelector(state => state.agents.currentAgent)//הסוכן הנוכחי
-    const userName = useSelector(state => state.agents.userName)//שם משתמש
+    const userName = useSelector(state => state.agents.currentUser)//שם משתמש
 
     const weeklyData = [
         { day: "יום א׳", completed: 5, closed: 2, unanswered: 1 },

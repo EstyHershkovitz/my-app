@@ -12,12 +12,12 @@ import { UsernameInputForm } from './features/agents/UsernameInputForm';
 function App() {
 
   // const dispatch = useDispatch();
-  // const currentUser = useSelector(state => state.agents.currentUser);
+  const currentUser = useSelector(state => state.agents.currentUser);
 
 
-  // if (!currentUser) {
-  //   return <UsernameInputForm />; // כאן המשתמש מזין שם
-  // }
+  if (!currentUser) {
+    return <UsernameInputForm />; // כאן המשתמש מזין שם
+  }
   return (
     <div className="App">
 
@@ -30,7 +30,7 @@ function App() {
         <Route path='/delete' element={<AgentDelete />} />
         <Route path='/details' element={<AgentDetails />} />
         <Route path='/userAgents' element={<UserAgent />} />
-        <Route path='*' element={<UsernameInputForm />} />
+        <Route path='*' element={<AgentManagement />} />
 
       </Routes>
     </div>
